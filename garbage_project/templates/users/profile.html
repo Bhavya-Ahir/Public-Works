@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends "garbage_app/base.html" %}
+{% load crispy_forms_tags %}
+{% block body_block %}
+    <div class="container">
+
+          <h2>{{ user.username }}</h2>
+          <p>{{ user.email }}</p>
+
+
+      <!-- FORM HERE -->
+    </div>
+{% endblock %}
