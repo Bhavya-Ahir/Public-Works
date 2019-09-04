@@ -26,7 +26,7 @@ SECRET_KEY = '47!&apm3d!tyolc2ny*@=x07n)rlpsk#rz1l=)b^$jvh%x(#xn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['bhavya17ahir.pythonanywhere.com' ]
+ALLOWED_HOSTS = ['bhavya17ahir.pythonanywhere.com' ,'127.0.0.1' ]
 
 
 # Application definition
@@ -129,3 +129,10 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
+
+STATIC_ROOT=os.path.join(BASE_DIR,"static_cdn")
+STATICFILES_DIRS=[
+    os.path.join(BASE_DIR,"static")
+]
+
+MEDIA_ROOT=os.path.join(BASE_DIR,"media_cdn")
