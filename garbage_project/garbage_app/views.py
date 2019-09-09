@@ -3,8 +3,8 @@ from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
 from rest_framework import generics
-from .models import Post,Vote,Comment
-from .serializers import PostSerializer,VoteSerializer
+from .models import Post,Vote,Comment,Garbage_User
+from .serializers import PostSerializer,VoteSerializer,Garbage_UserSerializer
 from rest_framework import status
 from django.views.generic import (TemplateView,ListView,
                                   DetailView,CreateView,
@@ -26,6 +26,13 @@ def index(request):
     return render(request,"garbage_app/home.html")
 def base_page(request):
     return render(request,"garbage_app/base.html")
+
+
+class Garbage_UserList(generics.ListCreateAPIView):
+    queryset=Garbage_User.objects.all()
+    serializer_class=Garbage_UserSerializer
+
+
 
 
 class PostList(generics.ListCreateAPIView):
@@ -62,7 +69,7 @@ class CreatePostView(LoginRequiredMixin,CreateView):
     login_url = '/login/'
     redirect_field_name = 'garbage_app/post_detail.html'
 
-    form_class = PostForm
+    form_class = PostForm()
 
     model = Post
 

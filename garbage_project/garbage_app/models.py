@@ -6,6 +6,9 @@ from django.urls import reverse
 
 
 class Post(models.Model):
+
+    image=models.FileField(null=True,blank=True)
+
     title = models.CharField(max_length=200)
     Description=models.CharField(max_length=200)
     author=models.ForeignKey(User,on_delete=models.CASCADE)
@@ -51,3 +54,11 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text
+
+
+class Garbage_User(models.Model):
+    first_name=models.CharField(max_length=50)
+    last_name=models.CharField(max_length=50)
+    email_id=models.EmailField()
+    password=models.CharField(max_length=100)
+    phone_number=models.IntegerField()
