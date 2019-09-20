@@ -62,3 +62,5 @@ class Garbage_User(models.Model):
     email_id=models.EmailField()
     password=models.CharField(max_length=100)
     phone_number=models.IntegerField()
+
+

@@ -32,6 +32,19 @@ class Garbage_UserList(generics.ListCreateAPIView):
     queryset=Garbage_User.objects.all()
     serializer_class=Garbage_UserSerializer
 
+class Login_User(APIView):
+
+    def validate_Login_User(self,request):
+        if request.method==POST:
+            email_from_API=request.POST("email")
+            queryset=Garbage_User.objects.get(email=email_from_API)
+            if (queryset):
+                return Response({"error":True,"Message":"User is registered"})
+            else:
+                return Response({"error":False,"Message":"User is not registered"})
+
+
+
 
 
 
