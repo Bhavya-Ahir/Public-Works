@@ -12,7 +12,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-import simplejson as json
+
 from garbage_app.forms import CommentForm, PostForm
 
 from .models import (Comment, Garbage_User, Post, Vote, checkpoint,
