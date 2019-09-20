@@ -21,6 +21,7 @@ from users import views as user_views
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import url, include
+# from garbage_app.views import checkpoint_view,driver_checkpoint_view,checkpoint_dustbin_view
 
 urlpatterns = [
     path('home/',views.index,name="home"),
@@ -37,6 +38,9 @@ urlpatterns = [
     path("postAPI/<int:pk>/vote/",views.CreateVote.as_view(),name="create_vote"),
     path("user/login/",views.Login_User.as_view(),name="Login_User"),
     path("checkpointAPI/",views.checkpoint_view.as_view(),name="checkpointAPI"),
+    path("driver_checkpointAPI/",views.driver_checkpoint_view.as_view(),name="driver_checkpointAPI"),
+    path("checkpoint_dustbinAPI/",views.checkpoint_dustbin_view.as_view(),name="driver_checkpoint_dustbinAPI")
+
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 

@@ -1,24 +1,25 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from rest_framework.response import Response
-from django.shortcuts import get_object_or_404
-from rest_framework.views import APIView
-from rest_framework import generics
-from .models import Post,Vote,Comment,Garbage_User,checkpoint
-from .serializers import PostSerializer,VoteSerializer,Garbage_UserSerializer,checkpoint_Serializer
-from rest_framework import status
-from django.views.generic import (TemplateView,ListView,
-                                  DetailView,CreateView,
-                                  UpdateView,DeleteView)
-
-from django.urls import reverse_lazy
-from django.contrib.auth.mixins import LoginRequiredMixin
-from garbage_app.forms import PostForm, CommentForm
-from django.utils import timezone
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.forms.models import model_to_dict
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse_lazy
+from django.utils import timezone
+from django.views.generic import (
+    CreateView, DeleteView, DetailView, ListView, TemplateView, UpdateView)
+from rest_framework import generics, serializers, status
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
+import simplejson as json
+from garbage_app.forms import CommentForm, PostForm
 
-
-
+from .models import (Comment, Garbage_User, Post, Vote, checkpoint,
+                     driver_checkpoint,checkpoint_dustbin)
+from .serializers import (Garbage_UserSerializer, PostSerializer,
+                          VoteSerializer, checkpoint_Serializer,
+                          driver_checkpoint_Serializer,checkpoint_dustbin_Serializer)
 
 # Create your views here.
 
@@ -58,6 +59,25 @@ class checkpoint_view(generics.ListCreateAPIView):
     serializer_class=checkpoint_Serializer
 
 
+
+# assuming obj is your model instance
+
+
+
+
+# @api_view(['GET'])
+# def checkpoint_view(request, format=None):
+#     """
+#     A view that can accept POST requests with JSON content.
+#     """
+#     dict_obj = model_to_dict(checkpoint.objects.all())
+#     serialized = json.dumps(dict_obj)
+
+#     #data = serializers.serialize('json',)
+#     #queryset=checkpoint.objects.all()
+#     return JsonResponse(serialized,safe=False)
+
+
 class PostDetail(generics.RetrieveDestroyAPIView):
     queryset=Post.objects.all()
     serializer_class=PostSerializer
@@ -91,6 +111,18 @@ class CreatePostView(LoginRequiredMixin,CreateView):
     form_class = PostForm()
 
     model = Post
+
+
+
+
+class driver_checkpoint_view(generics.ListCreateAPIView):
+    queryset=driver_checkpoint.objects.all()
+    serializer_class=driver_checkpoint_Serializer
+
+class checkpoint_dustbin_view(generics.ListCreateAPIView):
+    queryset=checkpoint_dustbin.objects.all()
+    serializer_class=checkpoint_dustbin_Serializer
+    
 
 
 class DraftListView(LoginRequiredMixin,ListView):
@@ -148,3 +180,7 @@ def comment_remove(request, pk):
     post_pk = comment.post.pk
     comment.delete()
     return redirect('post_detail', pk=post_pk)
+
+
+
+

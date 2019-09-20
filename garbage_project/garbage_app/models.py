@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.urls import reverse
-# Create your models here.
 
 
 class Post(models.Model):
@@ -67,3 +66,30 @@ class Garbage_User(models.Model):
 class checkpoint(models.Model):
     gar_location=models.CharField(max_length=50)
     gar_checkpoint=models.CharField(max_length=50)
+
+
+class checkpoint_dustbin(models.Model):
+
+    checkpoint=models.CharField(max_length=10)
+
+    yellow_bin=models.CharField(max_length=50)
+    green_bin=models.CharField(max_length=50)
+    red_bin=models.CharField(max_length=50)
+    blue_bin=models.CharField(max_length=50)
+    
+    distance1=models.CharField(max_length=10)
+    distance2=models.CharField(max_length=10)
+    distance3=models.CharField(max_length=10)
+    distance4=models.CharField(max_length=10)
+    
+    
+
+
+class driver_checkpoint(models.Model):
+
+    checkpoint1=models.CharField(max_length=50)
+    checkpoint2=models.CharField(max_length=50)
+    checkpoint3=models.CharField(max_length=50)
+    checkpoint4=models.CharField(max_length=50)
+    
+
