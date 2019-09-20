@@ -70,7 +70,7 @@ class checkpoint(models.Model):
 
 class checkpoint_dustbin(models.Model):
 
-    checkpoint=models.CharField(max_length=10)
+    checkpoint=models.CharField(pimarykey=True,max_length=10)
 
     yellow_bin=models.CharField(max_length=50)
     green_bin=models.CharField(max_length=50)
@@ -86,6 +86,8 @@ class checkpoint_dustbin(models.Model):
 
 
 class driver_checkpoint(models.Model):
+
+    driverID=models.CharField(primarykey=True,max_length=50)
 
     checkpoint1=models.CharField(max_length=50)
     checkpoint2=models.CharField(max_length=50)
