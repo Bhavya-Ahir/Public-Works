@@ -36,7 +36,7 @@ urlpatterns = [
     path("postAPI/<int:pk>/",views.PostDetail.as_view(),name="post_details"),
     path("postAPI/<int:pk>/vote/",views.CreateVote.as_view(),name="create_vote"),
     path("user/login/",views.Login_User.as_view(),name="Login_User"),
-    
+    path("checkpointAPI/",views.checkpoint_view.as_view(),name="checkpointAPI"),
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 

@@ -64,3 +64,6 @@ class Garbage_User(models.Model):
     phone_number=models.IntegerField()
 
 
+class checkpoint(models.Model):
+    gar_location=models.CharField(max_length=50)
+    gar_checkpoint=models.CharField(max_length=50)

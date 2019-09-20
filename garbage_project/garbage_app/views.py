@@ -3,8 +3,8 @@ from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
 from rest_framework import generics
-from .models import Post,Vote,Comment,Garbage_User,Checkpoints
-from .serializers import PostSerializer,VoteSerializer,Garbage_UserSerializer,Checkpoints_Serializer
+from .models import Post,Vote,Comment,Garbage_User,checkpoint
+from .serializers import PostSerializer,VoteSerializer,Garbage_UserSerializer,checkpoint_Serializer
 from rest_framework import status
 from django.views.generic import (TemplateView,ListView,
                                   DetailView,CreateView,
@@ -53,10 +53,9 @@ class PostList(generics.ListCreateAPIView):
     serializer_class=PostSerializer
 
 
-class Checkpoints_view(generics.ListCreateAPIView):
-    queryset=Checkpoints.objects.all()
-    serializer_class=Checkpoints_Serializer
-
+class checkpoint_view(generics.ListCreateAPIView):
+    queryset=checkpoint.objects.all()
+    serializer_class=checkpoint_Serializer
 
 
 class PostDetail(generics.RetrieveDestroyAPIView):
