@@ -87,6 +87,8 @@ class checkpoint_dustbin(models.Model):
 
 class driver_checkpoint(models.Model):
 
+    driverID=models.CharField(max_length=50)
+
     checkpoint1=models.CharField(max_length=50)
     checkpoint2=models.CharField(max_length=50)
     checkpoint3=models.CharField(max_length=50)
