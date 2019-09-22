@@ -19,6 +19,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.parsers import JSONParser
 from rest_framework.decorators import parser_classes
+from django.core.exceptions import ObjectDoesNotExist
 
 
 # Create your views here.
@@ -44,6 +45,8 @@ def validate_Garbage_User_view(request):
         email_id_received=request.data[0]["email_id"]
         password_received=request.data[0]["password"]
         req_user=Garbage_User.objects.filter(email_id=email_id_received).first()
+        # if Type(req_user)==None:
+        #     return Response({"message":"User Not Found"})
         actual_password=req_user.password
 
         if actual_password==password_received:
@@ -57,17 +60,22 @@ def validate_Garbage_User_view(request):
             dict["error"]=True
             return Response(dict)
             
-
-    except Garbage_User.DoesNotExist:
+    except :
 
         dict["error"]="True"
         dict["message"]="User not found"
         return Response(dict)
         
+@api_view(['POST'])
+def Register_Garbage_User(request):
 
-
-
-
+    serializer=Garbage_UserSerializer(data=request.data)
+    dict={}
+    if serializer.is_valid():
+        serializer.save()
+        return Response({"message":"successfully Registered"})
+    
+    return Response({"message":"registration failed"})
 
 
 
