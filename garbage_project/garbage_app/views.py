@@ -15,9 +15,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from garbage_app.forms import PostForm, CommentForm
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
-
-
-
+from rest_framework import status
+from rest_framework.decorators import api_view
+from rest_framework.parsers import JSONParser
+from rest_framework.decorators import parser_classes
 
 
 # Create your views here.
@@ -32,16 +33,39 @@ class Garbage_UserList(generics.ListCreateAPIView):
     queryset=Garbage_User.objects.all()
     serializer_class=Garbage_UserSerializer
 
-class Login_User(APIView):
+@api_view(['POST'])
+@parser_classes([JSONParser])
 
-    def validate_Login_User(self,request):
-        if request.method==POST:
-            email_from_API=request.POST("email")
-            queryset=Garbage_User.objects.get(email=email_from_API)
-            if (queryset):
-                return Response({"error":True,"Message":"User is registered"})
-            else:
-                return Response({"error":False,"Message":"User is not registered"})
+def validate_Garbage_User_view(request):
+
+    dict={}
+
+    try:
+        email_id_received=request.data[0]["email_id"]
+        password_received=request.data[0]["password"]
+        req_user=Garbage_User.objects.filter(email_id=email_id_received).first()
+        actual_password=req_user.password
+
+        if actual_password==password_received:
+            serializer=Garbage_UserSerializer(req_user)
+            dict["error"]=False
+            new_dict={**dict,**serializer.data}
+            return Response(new_dict)
+
+        else:
+            dict["message"]="Incorrect Password"
+            dict["error"]=True
+            return Response(dict)
+            
+
+    except Garbage_User.DoesNotExist:
+
+        dict["error"]="True"
+        dict["message"]="User not found"
+        return Response(dict)
+        
+
+
 
 
 
@@ -142,3 +166,5 @@ def comment_remove(request, pk):
     post_pk = comment.post.pk
     comment.delete()
     return redirect('post_detail', pk=post_pk)
+
+
