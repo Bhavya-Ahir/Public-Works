@@ -92,15 +92,19 @@ def Register_Garbage_User(request):
 
         try:
             if Garbage_User.objects.get(email_id=email)!=None:
-                return Response("User already Exists")
+                dict["error"]=True
+                dict["message"]="User with same emailID already exists"
+                return Response(dict)
 
         except Garbage_User.DoesNotExist:
                 serializer.save()
                 required_user=Garbage_User.objects.get(email_id=email)
                 user_id=required_user.id
                 dict["message"]="Succesfully registered"
-                new_dict={**dict,**serializer.data}
-                return Response(new_dict)
+                dict["error"]=False
+                dict["user"]=serializer.data
+                
+                return Response(dict)
 
     return Response({"message":"registration failed"})
 

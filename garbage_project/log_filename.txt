@@ -448,3 +448,15 @@ NameError: name 'HttpResponse' is not defined
 2019-09-23 19:47:49,190 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
 2019-09-23 19:48:06,801 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
 2019-09-23 19:48:28,012 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 20:20:47,156 - ERROR - Internal Server Error: /postAPI
+Traceback (most recent call last):
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\middleware\common.py", line 53, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\middleware\common.py", line 93, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/postAPI/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2019-09-23 20:59:02,982 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
