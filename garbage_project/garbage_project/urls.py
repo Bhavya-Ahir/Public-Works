@@ -37,6 +37,9 @@ urlpatterns = [
     path("postAPI/<int:pk>/vote/",views.CreateVote.as_view(),name="create_vote"),
     path("user/login/",views.validate_Garbage_User_view,name="validate_Garbage_User"),
     path("user/register/",views.Register_Garbage_User,name="Register_Garbage_User")
-]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
 
 
+if settings.DEBUG:
+    urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

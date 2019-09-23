@@ -20,6 +20,9 @@ from rest_framework.decorators import api_view
 from rest_framework.parsers import JSONParser
 from rest_framework.decorators import parser_classes
 from django.core.exceptions import ObjectDoesNotExist
+import logging
+logging.basicConfig(filename='log_filename.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+
 
 
 # Create your views here.
@@ -72,8 +75,18 @@ def Register_Garbage_User(request):
     serializer=Garbage_UserSerializer(data=request.data)
     dict={}
     if serializer.is_valid():
-        serializer.save()
-        return Response({"message":"successfully Registered"})
+        email=request.data["email_id"]
+        logging.debug(email)
+        logging.debug(Garbage_User.objects.get(email_id=email))
+        if Garbage_User.objects.get(email_id=email)!=None:
+            return Response("User already Exists")
+        else:
+            serializer.save()
+            required_user=Garbage_User.objects.get(email_id=email)
+            user_id=required_user.id
+            dict["message"]="Succesfully registered"
+            dict["user_id"]=user_id
+            return Response(dict)
     
     return Response({"message":"registration failed"})
 

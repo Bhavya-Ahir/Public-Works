@@ -8,7 +8,6 @@ from django.urls import reverse
 class Post(models.Model):
 
     image=models.FileField(null=True,blank=True)
-
     title = models.CharField(max_length=200)
     Description=models.CharField(max_length=200)
     author=models.ForeignKey(User,on_delete=models.CASCADE)
