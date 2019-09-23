@@ -20,6 +20,7 @@ from rest_framework.decorators import api_view
 from rest_framework.parsers import JSONParser
 from rest_framework.decorators import parser_classes
 from django.core.exceptions import ObjectDoesNotExist
+from django.http import JsonResponse    
 import logging
 logging.basicConfig(filename='log_filename.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -43,6 +44,7 @@ class Garbage_UserList(generics.ListCreateAPIView):
 def validate_Garbage_User_view(request):
 
     dict={}
+    l=[]
 
     try:
         email_id_received=request.data[0]["email_id"]
@@ -55,19 +57,28 @@ def validate_Garbage_User_view(request):
         if actual_password==password_received:
             serializer=Garbage_UserSerializer(req_user)
             dict["error"]=False
-            new_dict={**dict,**serializer.data}
-            return Response(new_dict)
+            dict["message"]="Login Successfull"
+            dict["user"]=serializer.data
+
+
+            l.append(dict)
+            # new_dict={**dict,**serializer.data}
+            # return Response(dict)
+            return JsonResponse(l,safe=False)
 
         else:
             dict["message"]="Incorrect Password"
             dict["error"]=True
-            return Response(dict)
+            l.append(dict)
+
+            return JsonResponse(l,safe=False)
             
     except :
 
-        dict["error"]="True"
+        dict["error"]=True
         dict["message"]="User not found"
-        return Response(dict)
+        l.append(dict)
+        return JsonResponse(l,safe=False)
         
 @api_view(['POST'])
 def Register_Garbage_User(request):
@@ -76,18 +87,21 @@ def Register_Garbage_User(request):
     dict={}
     if serializer.is_valid():
         email=request.data["email_id"]
-        logging.debug(email)
-        logging.debug(Garbage_User.objects.get(email_id=email))
-        if Garbage_User.objects.get(email_id=email)!=None:
-            return Response("User already Exists")
-        else:
-            serializer.save()
-            required_user=Garbage_User.objects.get(email_id=email)
-            user_id=required_user.id
-            dict["message"]="Succesfully registered"
-            dict["user_id"]=user_id
-            return Response(dict)
-    
+        # logging.debug(email)
+        # logging.debug(Garbage_User.objects.get(email_id=email))
+
+        try:
+            if Garbage_User.objects.get(email_id=email)!=None:
+                return Response("User already Exists")
+
+        except Garbage_User.DoesNotExist:
+                serializer.save()
+                required_user=Garbage_User.objects.get(email_id=email)
+                user_id=required_user.id
+                dict["message"]="Succesfully registered"
+                new_dict={**dict,**serializer.data}
+                return Response(new_dict)
+
     return Response({"message":"registration failed"})
 
 
