@@ -7,7 +7,7 @@ class VoteSerializer(serializers.ModelSerializer):
         fields="__all__"
 
 class PostSerializer(serializers.ModelSerializer):
-    votes=VoteSerializer(many=True,required=False)
+    # votes=VoteSerializer(many=True,required=False)
 
     class Meta:
         model=Post

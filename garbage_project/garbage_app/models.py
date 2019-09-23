@@ -15,6 +15,7 @@ class Post(models.Model):
     longitude=models.DecimalField(max_digits=11,decimal_places=8,null=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
+    
 
     def __str__(self):
         return self.Description

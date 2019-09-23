@@ -31,7 +31,10 @@ urlpatterns = [
     path('profile/', user_views.profile, name='profile'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
+
     path("postAPI/",views.PostList.as_view(),name="post_listAPI"),
+    path("post/upload/",views.send_post,name="post_listAPIModified"),
+
     path("Garbage_UserAPI/",views.Garbage_UserList.as_view(),name="Garbage_UserListAPI"),
     path("postAPI/<int:pk>/",views.PostDetail.as_view(),name="post_details"),
     path("postAPI/<int:pk>/vote/",views.CreateVote.as_view(),name="create_vote"),
@@ -43,3 +46,5 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+

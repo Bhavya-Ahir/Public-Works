@@ -460,3 +460,171 @@ Traceback (most recent call last):
     'url': request.get_host() + new_path,
 RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/postAPI/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
 2019-09-23 20:59:02,982 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 21:10:38,038 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 21:23:46,331 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\models.py changed, reloading.
+2019-09-23 21:27:49,909 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 21:33:17,291 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 21:34:32,650 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 22:01:33,708 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 22:02:19,591 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 22:02:37,385 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 22:02:55,099 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 22:04:19,848 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_project\urls.py changed, reloading.
+2019-09-23 22:04:57,802 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_project\urls.py changed, reloading.
+2019-09-23 22:05:40,520 - ERROR - Internal Server Error: /postAPIModified
+Traceback (most recent call last):
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\middleware\common.py", line 53, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\middleware\common.py", line 93, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/postAPIModified/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2019-09-23 22:06:26,380 - WARNING - Unsupported Media Type: /postAPIModified/
+2019-09-23 22:07:09,647 - WARNING - Unsupported Media Type: /postAPIModified/
+2019-09-23 22:07:18,258 - WARNING - Unsupported Media Type: /postAPIModified/
+2019-09-23 22:10:05,073 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_project\urls.py changed, reloading.
+2019-09-23 22:12:02,763 - WARNING - Unsupported Media Type: /postAPIModified/
+2019-09-23 22:25:58,166 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 22:26:52,298 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 22:27:18,628 - WARNING - Unsupported Media Type: /postAPIModified/
+2019-09-23 22:30:41,052 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 22:31:41,554 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 22:33:21,137 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 22:40:00,007 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\serializers.py changed, reloading.
+2019-09-23 22:41:17,299 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 22:44:04,143 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 22:44:46,049 - WARNING - Not Found: /postAPII/
+2019-09-23 22:46:07,338 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 22:48:39,219 - WARNING - Method Not Allowed: /postAPIModified/
+2019-09-23 22:49:00,960 - ERROR - Internal Server Error: /postAPIModified/
+Traceback (most recent call last):
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\rest_framework\views.py", line 457, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\rest_framework\views.py", line 468, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\rest_framework\views.py", line 494, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py", line 127, in send_post
+    "image": null,
+NameError: name 'null' is not defined
+2019-09-23 22:49:52,631 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 22:50:38,237 - WARNING - Method Not Allowed: /postAPIModified/
+2019-09-23 22:51:39,331 - WARNING - Method Not Allowed: /postAPIModified/
+2019-09-23 22:53:36,652 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 22:55:50,317 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 22:59:09,881 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 23:00:35,215 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 23:01:17,775 - WARNING - Not Found: /postAPI/
+2019-09-23 23:01:27,893 - WARNING - Method Not Allowed: /postAPIModified/
+2019-09-23 23:01:52,903 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_project\urls.py changed, reloading.
+2019-09-23 23:01:56,577 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_project\urls.py changed, reloading.
+2019-09-23 23:02:27,435 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 23:03:07,608 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 23:04:35,879 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 23:05:14,791 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 23:06:03,517 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 23:08:13,754 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 23:10:39,247 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 23:10:50,292 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 23:11:40,192 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 23:12:48,335 - WARNING - Method Not Allowed: /postAPIModified/
+2019-09-23 23:22:55,021 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 23:24:58,354 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 23:33:00,619 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 23:33:13,818 - ERROR - Internal Server Error: /postAPIModified/
+Traceback (most recent call last):
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\core\handlers\base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\core\handlers\base.py", line 143, in _get_response
+    response = response.render()
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\rest_framework\renderers.py", line 104, in render
+    allow_nan=not self.strict, separators=separators
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\rest_framework\utils\encoders.py", line 50, in default
+    return obj.decode()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2019-09-23 23:35:49,384 - WARNING - Method Not Allowed: /postAPIModified/
+2019-09-23 23:36:49,779 - WARNING - Method Not Allowed: /postAPIModified/
+2019-09-23 23:39:52,499 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 23:40:15,508 - ERROR - Internal Server Error: /postAPIModified/
+Traceback (most recent call last):
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\core\handlers\base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\core\handlers\base.py", line 143, in _get_response
+    response = response.render()
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\rest_framework\renderers.py", line 104, in render
+    allow_nan=not self.strict, separators=separators
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\rest_framework\utils\encoders.py", line 50, in default
+    return obj.decode()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2019-09-23 23:41:21,939 - ERROR - Internal Server Error: /postAPIModified/
+Traceback (most recent call last):
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\core\handlers\base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\core\handlers\base.py", line 143, in _get_response
+    response = response.render()
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\rest_framework\renderers.py", line 104, in render
+    allow_nan=not self.strict, separators=separators
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\bhavya\Anaconda3\envs\myenv1\lib\site-packages\rest_framework\utils\encoders.py", line 50, in default
+    return obj.decode()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2019-09-23 23:42:08,364 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-23 23:43:29,259 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_project\urls.py changed, reloading.

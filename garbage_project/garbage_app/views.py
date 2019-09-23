@@ -22,6 +22,7 @@ from rest_framework.decorators import parser_classes
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import JsonResponse    
 import logging
+from rest_framework.parsers import MultiPartParser, FormParser
 logging.basicConfig(filename='log_filename.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
@@ -57,7 +58,7 @@ def validate_Garbage_User_view(request):
         if actual_password==password_received:
             serializer=Garbage_UserSerializer(req_user)
             dict["error"]=False
-            dict["message"]="Login Successfull"
+            dict["message"]="Login Successful"
             dict["user"]=serializer.data
 
 
@@ -112,8 +113,34 @@ def Register_Garbage_User(request):
 
 
 class PostList(generics.ListCreateAPIView):
+    # logging.debug(request.data)
     queryset=Post.objects.all()
     serializer_class=PostSerializer
+
+
+
+@api_view(['POST'])
+@parser_classes([MultiPartParser, FormParser])
+def send_post(request):
+    dict={}
+    # serializer=PostSerializer(data=request.data)
+    # null=None
+    serializer=PostSerializer(data=request.data)
+
+    if serializer.is_valid():
+        serializer.save()
+        dict["message"]="successful"
+        dict["error"]=False
+        dict["Post"]=serializer.data
+        #queryset=Post.objects.all()
+        return Response(dict)
+    dict["message"]="Unsuccessful"
+    dict["error"]=True
+    return Response(request.data)
+
+
+
+
 
 class PostDetail(generics.RetrieveDestroyAPIView):
     queryset=Post.objects.all()
@@ -136,6 +163,23 @@ class PostListView(ListView):
 
     def get_queryset(self):
         return Post.objects.all()
+
+
+# @api_view(['POST'])
+# def filter_posts(request):
+#     received_latitude=request.data["latitude"]
+#     received_longitude=request.data["longitude"]
+#     radius=request.data["radius"]
+#     all_posts=Post.objects.all()
+
+#     for post in all_posts:
+
+#         if 
+
+
+
+
+
 
 class PostDetailView(DetailView):
     model = Post
