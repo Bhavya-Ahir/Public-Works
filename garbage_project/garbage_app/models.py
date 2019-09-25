@@ -15,7 +15,9 @@ class Post(models.Model):
     longitude=models.DecimalField(max_digits=11,decimal_places=8,null=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
-    
+    status=models.CharField(default="Waiting for Acknowledgement",max_length=10)
+    vote_count=models.IntegerField(default=0)
+
 
     def __str__(self):
         return self.Description
@@ -63,3 +65,6 @@ class Garbage_User(models.Model):
     password=models.CharField(max_length=100)
     phone_number=models.IntegerField()
 
+class Vote_table(models.Model):
+    user_id=models.IntegerField()
+    post_id=models.IntegerField()

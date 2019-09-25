@@ -3,8 +3,8 @@ from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
 from rest_framework import generics
-from .models import Post,Vote,Comment,Garbage_User
-from .serializers import PostSerializer,VoteSerializer,Garbage_UserSerializer
+from .models import Post,Vote,Comment,Garbage_User,Vote_table
+from .serializers import PostSerializer,VoteSerializer,Garbage_UserSerializer,Vote_tableSerializer
 from rest_framework import status
 from django.views.generic import (TemplateView,ListView,
                                   DetailView,CreateView,
@@ -119,6 +119,9 @@ class PostList(generics.ListCreateAPIView):
 
 
 
+
+
+
 @api_view(['POST'])
 @parser_classes([MultiPartParser, FormParser])
 def send_post(request):
@@ -137,6 +140,49 @@ def send_post(request):
     dict["message"]="Unsuccessful"
     dict["error"]=True
     return Response(request.data)
+
+
+
+@api_view(["POST"])
+def upvote_view(request):
+    dict={}
+
+    try:
+
+        serializer=Vote_tableSerializer(data=request.data)
+        received_post_id=request.data["post_id"]
+        post_obj=Post.objects.get(id=received_post_id)
+        post_obj["vote_count"]+=1
+        post_obj.save(["vote_count"])
+        if serializer.is_valid():
+            serializer.save()
+            dict["error"]=False
+            dict["message"]="Upvote Successful"
+            dict["send_data"]=serializer.data
+            dict["updated vote count"]=post_obj["vote_count"]
+            return Response(dict)
+        else:
+
+            return Response({"message":"Invalid Post"})
+
+    except :
+        dict["error"]=True
+        dict["message"]="Upvote Failed"
+        dict["send_data"]=request.data
+        return Response(dict)
+
+
+
+@api_view(["GET"])
+def Vote_table_list(request):
+    queryset=Vote_table.objects.all()
+    return Response(queryset)
+
+
+# class Vote_(generics.ListCreateAPIView):
+#     # logging.debug(request.data)
+#     queryset=Post.objects.all()
+#     serializer_class=PostSerialize
 
 
 

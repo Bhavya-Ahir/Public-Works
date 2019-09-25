@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Post,Vote,Garbage_User
+from .models import Post,Vote,Garbage_User,Vote_table
 
 class VoteSerializer(serializers.ModelSerializer):
     class Meta:
@@ -17,4 +17,10 @@ class PostSerializer(serializers.ModelSerializer):
 class Garbage_UserSerializer(serializers.ModelSerializer):
     class Meta:
         model=Garbage_User
+        fields="__all__"
+
+class Vote_tableSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model=Vote_table
         fields="__all__"

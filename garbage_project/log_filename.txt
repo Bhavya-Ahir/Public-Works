@@ -628,3 +628,44 @@ Traceback (most recent call last):
 UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
 2019-09-23 23:42:08,364 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_app\views.py changed, reloading.
 2019-09-23 23:43:29,259 - INFO - C:\Users\bhavya\Desktop\sad_final\sad_project\garbage_project\garbage_project\urls.py changed, reloading.
+2019-09-24 16:10:20,133 - INFO - C:\Users\Harsh\Desktop\sad_project\garbage_project\garbage_app\models.py changed, reloading.
+2019-09-24 16:31:31,447 - WARNING - Not Found: /favicon.ico
+2019-09-24 16:35:02,780 - ERROR - Internal Server Error: /upvotelist/
+Traceback (most recent call last):
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 143, in _get_response
+    response = response.render()
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 725, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 681, in get_context
+    'content': self.get_content(renderer, data, accepted_media_type, renderer_context),
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 414, in get_content
+    content = renderer.render(data, accepted_media_type, renderer_context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 104, in render
+    allow_nan=not self.strict, separators=separators
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 429, in _iterencode
+    yield from _iterencode_list(o, _current_indent_level)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Vote_table is not JSON serializable
