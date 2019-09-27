@@ -23,7 +23,9 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.http import JsonResponse    
 import logging
 from rest_framework.parsers import MultiPartParser, FormParser
-logging.basicConfig(filename='log_filename.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig( level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+# from .logginginitializer import *
+
 
 
 
@@ -145,27 +147,33 @@ def send_post(request):
 
 @api_view(["POST"])
 def upvote_view(request):
+    # initialize_logger()
     dict={}
 
     try:
 
         serializer=Vote_tableSerializer(data=request.data)
-        received_post_id=request.data["post_id"]
-        post_obj=Post.objects.get(id=received_post_id)
-        post_obj["vote_count"]+=1
-        post_obj.save(["vote_count"])
+        logging.debug("Data Received")
+        logging.debug(request.data["post_id"])
+        received_post_id = request.data["post_id"]
+        logging.debug(received_post_id)
+        post_obj=Post.objects.get(id = received_post_id)
+        logging.debug(post_obj.id)
+        post_obj.vote_count += 1
+        post_obj.save()
         if serializer.is_valid():
             serializer.save()
             dict["error"]=False
             dict["message"]="Upvote Successful"
             dict["send_data"]=serializer.data
-            dict["updated vote count"]=post_obj["vote_count"]
+            dict["updated vote count"]=post_obj.vote_count
             return Response(dict)
         else:
 
             return Response({"message":"Invalid Post"})
 
-    except :
+    except Exception as e :
+        logging.fatal(e,exc_info=True)
         dict["error"]=True
         dict["message"]="Upvote Failed"
         dict["send_data"]=request.data
@@ -176,7 +184,13 @@ def upvote_view(request):
 @api_view(["GET"])
 def Vote_table_list(request):
     queryset=Vote_table.objects.all()
-    return Response(queryset)
+    serializer=Vote_tableSerializer(data=queryset)
+
+    if serializer.is_valid():
+    # dict={}
+    # dict["list"]=queryset
+        return Response(serializer.data)
+    return Response({"message":"Failed"})
 
 
 # class Vote_(generics.ListCreateAPIView):

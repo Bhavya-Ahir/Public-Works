@@ -669,3 +669,638 @@ Traceback (most recent call last):
   File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 179, in default
     raise TypeError(f'Object of type {o.__class__.__name__} '
 TypeError: Object of type Vote_table is not JSON serializable
+2019-09-27 12:00:59,348 - ERROR - Internal Server Error: /upvotelist/
+Traceback (most recent call last):
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 143, in _get_response
+    response = response.render()
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 725, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 681, in get_context
+    'content': self.get_content(renderer, data, accepted_media_type, renderer_context),
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 414, in get_content
+    content = renderer.render(data, accepted_media_type, renderer_context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 104, in render
+    allow_nan=not self.strict, separators=separators
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 429, in _iterencode
+    yield from _iterencode_list(o, _current_indent_level)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Vote_table is not JSON serializable
+2019-09-27 12:02:43,881 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:02:55,657 - ERROR - Internal Server Error: /upvotelist/
+Traceback (most recent call last):
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 143, in _get_response
+    response = response.render()
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 725, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 681, in get_context
+    'content': self.get_content(renderer, data, accepted_media_type, renderer_context),
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 414, in get_content
+    content = renderer.render(data, accepted_media_type, renderer_context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 104, in render
+    allow_nan=not self.strict, separators=separators
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 429, in _iterencode
+    yield from _iterencode_list(o, _current_indent_level)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Vote_table is not JSON serializable
+2019-09-27 12:02:56,939 - ERROR - Internal Server Error: /upvotelist/
+Traceback (most recent call last):
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 143, in _get_response
+    response = response.render()
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 725, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 681, in get_context
+    'content': self.get_content(renderer, data, accepted_media_type, renderer_context),
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 414, in get_content
+    content = renderer.render(data, accepted_media_type, renderer_context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 104, in render
+    allow_nan=not self.strict, separators=separators
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 429, in _iterencode
+    yield from _iterencode_list(o, _current_indent_level)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Vote_table is not JSON serializable
+2019-09-27 12:03:04,494 - ERROR - Internal Server Error: /upvotelist/
+Traceback (most recent call last):
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 143, in _get_response
+    response = response.render()
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 725, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 681, in get_context
+    'content': self.get_content(renderer, data, accepted_media_type, renderer_context),
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 414, in get_content
+    content = renderer.render(data, accepted_media_type, renderer_context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 104, in render
+    allow_nan=not self.strict, separators=separators
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 429, in _iterencode
+    yield from _iterencode_list(o, _current_indent_level)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Vote_table is not JSON serializable
+2019-09-27 12:05:02,932 - ERROR - Internal Server Error: /upvotelist/
+Traceback (most recent call last):
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 143, in _get_response
+    response = response.render()
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 725, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 681, in get_context
+    'content': self.get_content(renderer, data, accepted_media_type, renderer_context),
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 414, in get_content
+    content = renderer.render(data, accepted_media_type, renderer_context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 104, in render
+    allow_nan=not self.strict, separators=separators
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 429, in _iterencode
+    yield from _iterencode_list(o, _current_indent_level)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Vote_table is not JSON serializable
+2019-09-27 12:06:10,107 - WARNING - Method Not Allowed: /upvote/
+2019-09-27 12:09:25,666 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:09:32,849 - ERROR - Internal Server Error: /upvotelist/
+Traceback (most recent call last):
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py", line 182, in Vote_table_list
+    return Response(serializer)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\response.py", line 38, in __init__
+    raise AssertionError(msg)
+AssertionError: You passed a Serializer instance as data, but probably meant to pass serialized `.data` or `.error`. representation.
+2019-09-27 12:10:01,158 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:10:05,253 - ERROR - Internal Server Error: /upvotelist/
+Traceback (most recent call last):
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py", line 182, in Vote_table_list
+    return Response(serializer.data)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\serializers.py", line 559, in data
+    ret = super().data
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\serializers.py", line 257, in data
+    raise AssertionError(msg)
+AssertionError: When a serializer is passed a `data` keyword argument you must call `.is_valid()` before attempting to access the serialized `.data` representation.
+You should either call `.is_valid()` first, or access `.initial_data` instead.
+2019-09-27 12:11:07,510 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:11:10,544 - ERROR - Internal Server Error: /upvotelist/
+Traceback (most recent call last):
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\views.py", line 507, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\views.py", line 422, in finalize_response
+    % type(response)
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'dict'>`
+2019-09-27 12:11:12,543 - ERROR - Internal Server Error: /upvotelist/
+Traceback (most recent call last):
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\views.py", line 507, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\views.py", line 422, in finalize_response
+    % type(response)
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'dict'>`
+2019-09-27 12:11:58,579 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:12:42,910 - WARNING - Method Not Allowed: /upvote/
+2019-09-27 12:14:19,270 - WARNING - Bad Request: /upvote/
+2019-09-27 12:20:45,729 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:20:45,805 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:21:03,455 - ERROR - Internal Server Error: /upvote/
+Traceback (most recent call last):
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 143, in _get_response
+    response = response.render()
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 725, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 681, in get_context
+    'content': self.get_content(renderer, data, accepted_media_type, renderer_context),
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 414, in get_content
+    content = renderer.render(data, accepted_media_type, renderer_context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 104, in render
+    allow_nan=not self.strict, separators=separators
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Post is not JSON serializable
+2019-09-27 12:21:03,558 - WARNING - Method Not Allowed: /upvote/
+2019-09-27 12:21:30,940 - ERROR - Internal Server Error: /upvote/
+Traceback (most recent call last):
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\core\handlers\base.py", line 143, in _get_response
+    response = response.render()
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 725, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 681, in get_context
+    'content': self.get_content(renderer, data, accepted_media_type, renderer_context),
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 414, in get_content
+    content = renderer.render(data, accepted_media_type, renderer_context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\renderers.py", line 104, in render
+    allow_nan=not self.strict, separators=separators
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Post is not JSON serializable
+2019-09-27 12:21:31,009 - WARNING - Method Not Allowed: /upvote/
+2019-09-27 12:22:24,898 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:22:25,003 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:23:09,674 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:23:09,720 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:28:41,600 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:28:41,606 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:28:58,187 - DEBUG - Data Received
+2019-09-27 12:31:55,435 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:31:55,466 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:32:10,697 - DEBUG - Data Received
+2019-09-27 12:32:10,730 - CRITICAL - 'Post' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py", line 158, in upvote_view
+    post_obj["vote_count"] += 1
+TypeError: 'Post' object is not subscriptable
+2019-09-27 12:33:07,326 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:33:07,360 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:33:28,455 - DEBUG - Data Received
+2019-09-27 12:33:28,505 - CRITICAL - UNIQUE constraint failed: garbage_app_post.id
+Traceback (most recent call last):
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\sqlite3\base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: garbage_app_post.id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py", line 159, in upvote_view
+    post_obj.save(["vote_count"])
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\base.py", line 741, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\base.py", line 779, in save_base
+    force_update, using, update_fields,
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\base.py", line 908, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\sql\compiler.py", line 1335, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\sqlite3\base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: garbage_app_post.id
+2019-09-27 12:40:01,451 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:40:01,457 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:40:10,400 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:40:10,435 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:40:18,791 - DEBUG - Data Received
+2019-09-27 12:40:18,795 - DEBUG - Data Received
+2019-09-27 12:40:18,811 - CRITICAL - UNIQUE constraint failed: garbage_app_post.id
+Traceback (most recent call last):
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\sqlite3\base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: garbage_app_post.id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py", line 160, in upvote_view
+    post_obj.save(["vote_count"])
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\base.py", line 741, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\base.py", line 779, in save_base
+    force_update, using, update_fields,
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\base.py", line 908, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\sql\compiler.py", line 1335, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\sqlite3\base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: garbage_app_post.id
+2019-09-27 12:42:26,038 - WARNING - Bad Request: /upvote/
+2019-09-27 12:42:34,605 - DEBUG - Data Received
+2019-09-27 12:42:34,605 - DEBUG - Data Received
+2019-09-27 12:42:34,629 - CRITICAL - UNIQUE constraint failed: garbage_app_post.id
+Traceback (most recent call last):
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\sqlite3\base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: garbage_app_post.id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py", line 160, in upvote_view
+    post_obj.save(["vote_count"])
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\base.py", line 741, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\base.py", line 779, in save_base
+    force_update, using, update_fields,
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\base.py", line 908, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\sql\compiler.py", line 1335, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\sqlite3\base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: garbage_app_post.id
+2019-09-27 12:44:08,247 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:44:08,261 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:44:16,963 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:44:16,994 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:44:20,681 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:44:20,691 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:44:31,636 - DEBUG - Data Received
+2019-09-27 12:44:31,636 - DEBUG - 5
+2019-09-27 12:44:31,662 - CRITICAL - UNIQUE constraint failed: garbage_app_post.id
+Traceback (most recent call last):
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\sqlite3\base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: garbage_app_post.id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py", line 160, in upvote_view
+    post_obj.save(["vote_count"])
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\base.py", line 741, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\base.py", line 779, in save_base
+    force_update, using, update_fields,
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\base.py", line 908, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\sql\compiler.py", line 1335, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\sqlite3\base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: garbage_app_post.id
+2019-09-27 12:45:24,551 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:45:24,570 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:45:35,860 - DEBUG - Data Received
+2019-09-27 12:45:35,864 - DEBUG - 5
+2019-09-27 12:45:35,864 - DEBUG - 5
+2019-09-27 12:45:35,891 - CRITICAL - UNIQUE constraint failed: garbage_app_post.id
+Traceback (most recent call last):
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\sqlite3\base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: garbage_app_post.id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py", line 160, in upvote_view
+    post_obj.save(["vote_count"])
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\base.py", line 741, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\base.py", line 779, in save_base
+    force_update, using, update_fields,
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\base.py", line 908, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\models\sql\compiler.py", line 1335, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Harsh\Anaconda3\envs\myenv\lib\site-packages\django\db\backends\sqlite3\base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: garbage_app_post.id
+2019-09-27 12:46:18,760 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:46:18,780 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:46:33,772 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:46:33,777 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
+2019-09-27 12:52:14,114 - INFO - C:\Users\Harsh\PycharmProjects\sad_project\garbage_project\garbage_app\views.py changed, reloading.
