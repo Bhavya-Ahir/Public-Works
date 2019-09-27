@@ -181,6 +181,42 @@ def upvote_view(request):
 
 
 
+@api_view(["POST"])
+
+def downvote(request):
+
+    try:
+        uid=request.data["user_id"]
+        pid=request.data["post_id"]
+        post=Post.objects.get(id=pid)
+        logging.debug(post.vote_count)
+        post.vote_count-=1
+        logging.debug("check 1")
+        post.save()
+        logging.debug("check 2")
+        entry=Vote_table.objects.filter(user_id=uid).filter(post_id=pid)
+        logging.debug("check 3")
+
+        entry.delete()
+        return Response({"message":"successful","updated_vote_count":post.vote_count})
+    except:
+        return Response({"message":"Failed"})
+
+#
+# {
+#     "user_id":1
+#     ,"post_id":5
+# }
+
+
+
+
+
+
+
+
+
+
 
 @api_view(["GET"])
 def liked_post(request,uid):
