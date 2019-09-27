@@ -170,7 +170,7 @@ def upvote_view(request):
             return Response(dict)
         else:
 
-            return Response({"message":"Invalid Post"})
+            return Response({"message":"Already Liked"})
 
     except Exception as e :
         logging.fatal(e,exc_info=True)
@@ -181,23 +181,33 @@ def upvote_view(request):
 
 
 
-# @api_view(["GET"])
-# def Vote_table_list(request):
-#     queryset=Vote_table.objects.all()
-#     serializer=Vote_tableSerializer(data=queryset)
-#
-#     if serializer.is_valid():
-#     # dict={}
-#     # dict["list"]=queryset
-#         return Response(serializer.data)
-#     return Response({"message":"Failed"})
+
+@api_view(["GET"])
+def liked_post(request,uid):
+    try:
+
+        entry=Vote_table.objects.filter(user_id=uid).values()
+
+        logging.debug(list(entry))
+        # serializer=Vote_tableSerializer(data=entry,many=True)
+        # if serializer.is_valid():
+        return Response(list(entry))
+
+
+    except:
+        logging.debug("Exception")
+        return Response({"message":"Failed"})
+
+
+
+
+
+
 
 class Vote_table_list(generics.ListCreateAPIView):
     # logging.debug(request.data)
     queryset=Vote_table.objects.all()
     serializer_class=Vote_tableSerializer
-
-
 
 
 

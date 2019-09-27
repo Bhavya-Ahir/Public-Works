@@ -41,7 +41,9 @@ urlpatterns = [
     path("user/login/",views.validate_Garbage_User_view,name="validate_Garbage_User"),
     path("user/register/",views.Register_Garbage_User,name="Register_Garbage_User"),
     path("upvote/",views.upvote_view,name="Upvote"),
-    path("upvotelist/",views.Vote_table_list.as_view(),name="UpvoteTable")
+    path("upvotelist/",views.Vote_table_list.as_view(),name="UpvoteTable"),
+    path("userslikedpost/<int:uid>/",views.liked_post,name="getuserspost"),
+
 ]
 
 
