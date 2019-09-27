@@ -39,7 +39,9 @@ urlpatterns = [
     path("postAPI/<int:pk>/",views.PostDetail.as_view(),name="post_details"),
     path("postAPI/<int:pk>/vote/",views.CreateVote.as_view(),name="create_vote"),
     path("user/login/",views.validate_Garbage_User_view,name="validate_Garbage_User"),
-    path("user/register/",views.Register_Garbage_User,name="Register_Garbage_User")
+    path("user/register/",views.Register_Garbage_User,name="Register_Garbage_User"),
+    path("upvote/",views.upvote_view,name="Upvote"),
+    path("upvotelist/",views.Vote_table_list,name="UpvoteTable")
 ]
 
 
