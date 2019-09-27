@@ -180,6 +180,22 @@ def upvote_view(request):
         return Response(dict)
 
 
+@api_view(["GET"])
+def get_users_post(request, uid):
+    try:
+        user_post = Post.objects.filter(author=uid).values()
+        return Response(list(user_post))
+    except:
+        return Response({"message": "Failed"})
+
+
+
+
+
+
+
+
+
 
 # @api_view(["GET"])
 # def Vote_table_list(request):
