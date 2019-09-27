@@ -181,16 +181,25 @@ def upvote_view(request):
 
 
 
-@api_view(["GET"])
-def Vote_table_list(request):
-    queryset=Vote_table.objects.all()
-    serializer=Vote_tableSerializer(data=queryset)
+# @api_view(["GET"])
+# def Vote_table_list(request):
+#     queryset=Vote_table.objects.all()
+#     serializer=Vote_tableSerializer(data=queryset)
+#
+#     if serializer.is_valid():
+#     # dict={}
+#     # dict["list"]=queryset
+#         return Response(serializer.data)
+#     return Response({"message":"Failed"})
 
-    if serializer.is_valid():
-    # dict={}
-    # dict["list"]=queryset
-        return Response(serializer.data)
-    return Response({"message":"Failed"})
+class Vote_table_list(generics.ListCreateAPIView):
+    # logging.debug(request.data)
+    queryset=Vote_table.objects.all()
+    serializer_class=Vote_tableSerializer
+
+
+
+
 
 
 # class Vote_(generics.ListCreateAPIView):
