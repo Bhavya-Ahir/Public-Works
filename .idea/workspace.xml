@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0b36a975-f1ce-4ff7-b1c4-8d051980cb98" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/garbage_project/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/garbage_project/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/garbage_project/garbage_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/garbage_project/garbage_app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/garbage_project/garbage_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/garbage_project/garbage_app/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/garbage_project/garbage_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/garbage_project/garbage_project/urls.py" afterDir="false" />
     </list>
@@ -105,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569610721995</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Like feature added+APIS">
+      <created>1569621324894</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1569621324894</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +119,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="trying from pycharm" />
     <MESSAGE value="Like feature added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Like feature added" />
+    <MESSAGE value="Like feature added+APIS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Like feature added+APIS" />
   </component>
 </project>

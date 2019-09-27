@@ -42,7 +42,8 @@ urlpatterns = [
     path("user/register/",views.Register_Garbage_User,name="Register_Garbage_User"),
     path("upvote/",views.upvote_view,name="Upvote"),
     path("upvotelist/",views.Vote_table_list.as_view(),name="UpvoteTable"),
-    path("userslikedpost/<int:uid>/",views.liked_post,name="getuserspost"),
+    path("userslikedpost/<int:uid>/",views.liked_post,name="getuserslikedspost"),
+    path("getuserspost/<int:uid>/",views.get_users_post,name="getuserspost"),
 
 ]
 

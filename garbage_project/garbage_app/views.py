@@ -199,8 +199,14 @@ def liked_post(request,uid):
         return Response({"message":"Failed"})
 
 
+@api_view(["GET"])
+def get_users_post(request,uid):
+    try:
+        users_post=Post.objects.filter(author=uid).values()
+        return Response(list(users_post))
 
-
+    except:
+        return Response({"message":"Failed"})
 
 
 
