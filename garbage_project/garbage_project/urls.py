@@ -46,6 +46,7 @@ urlpatterns = [
     path("getuserspost/<int:uid>/",views.get_users_post,name="getuserspost"),
     path("downvote/",views.downvote,name="downvote"),
     path("filterpost/",views.filter_posts,name="filterpost"),
+    path("updateStatus/",views.update_status,name="updatestatus"),
 
 ]
 

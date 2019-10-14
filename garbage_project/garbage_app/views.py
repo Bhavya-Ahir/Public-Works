@@ -25,6 +25,7 @@ import logging
 from rest_framework.parsers import MultiPartParser, FormParser
 from math import sin, cos, sqrt, atan2
 from math import radians, sin, cos, acos
+from django.core import serializers
 logging.basicConfig( level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
@@ -220,21 +221,6 @@ def downvote(request):
     except:
         return Response({"message":"Failed"})
 
-#
-# {
-#     "user_id":1
-#     ,"post_id":5
-# }
-
-
-
-
-
-
-
-
-
-
 
 @api_view(["GET"])
 def liked_post(request,uid):
@@ -257,28 +243,18 @@ def liked_post(request,uid):
 def get_users_post(request,uid):
     try:
         users_post=Post.objects.filter(author=uid).values()
-        return Response(list(users_post))
+        serializer=PostSerializer(users_post)
+
+        return Response([users_post])
 
     except:
         return Response({"message":"Failed"})
-
 
 
 class Vote_table_list(generics.ListCreateAPIView):
     # logging.debug(request.data)
     queryset=Vote_table.objects.all()
     serializer_class=Vote_tableSerializer
-
-
-
-
-# class Vote_(generics.ListCreateAPIView):
-#     # logging.debug(request.data)
-#     queryset=Post.objects.all()
-#     serializer_class=PostSerialize
-
-
-
 
 
 class PostDetail(generics.RetrieveDestroyAPIView):
@@ -306,31 +282,35 @@ class PostListView(ListView):
 
 @api_view(['POST'])
 def filter_posts(request):
+
     try:
-        # slat = radians(float(input("Starting latitude: ")))
-        # slon = radians(float(input("Ending longitude: ")))
-        # elat = radians(float(input("Starting latitude: ")))
-        # elon = radians(float(input("Ending longitude: ")))
-        #
-        # dist = 6371.01 * acos(sin(slat) * sin(elat) + cos(slat) * cos(elat) * cos(slon - elon))
 
         slat=radians(request.data["latitude"])
         slon=radians(request.data["longitude"])
         radius=request.data["radius"]
         all_posts=Post.objects.all()
         to_send=[]
+        i=0
         for post in all_posts:
+
             elat=radians(post.latitude)
             elon=radians(post.longitude)
-            logging.debug(6371.01 * acos(sin(slat) * sin(elat) + cos(slat) * cos(elat) * cos(slon - elon)))
-            logging.debug(radius)
-            if  6371.01 * acos(sin(slat) * sin(elat) + cos(slat) * cos(elat) * cos(slon - elon))<=radius:
 
-                to_send.append(post.values())
-        logging.debug(list(to_send))
+            #
+            # if 6371.01* acos(sin(slat) * sin(elat) + cos(slat) * cos(elat) * cos(slon - elon))<=radius:
+            #     serialized_obj = serializers.serialize('json', [post, ])
+            #     to_send.append(serialized_obj)
+
+            if 6371.01*1000* acos(sin(slat) * sin(elat) + cos(slat) * cos(elat) * cos(slon - elon))<=radius:
+                serializer = PostSerializer(post)
+                to_send.append(serializer.data)
+
+
+
+        # logging.debug(list(to_send))
         return Response(to_send)
     except:
-        return Response(to_send)
+        return Response({"message":"No post found"})
 
 
 
@@ -403,9 +383,35 @@ def comment_remove(request, pk):
     comment.delete()
     return redirect('post_detail', pk=post_pk)
 
-# 19.1642021,72.863352
-# {
-#     "latitude":19.1642021,
-#     "longitude":72.863352,
-#     "radius":10
-# }
+
+@api_view(["POST"])
+def update_status(request):
+    try:
+        uid = request.data["user_id"]
+        pid = request.data["post_id"]
+        status=request.data["status"]
+        post = Post.objects.get(id=pid)
+        post.status=status
+        post.save()
+        serializer=PostSerializer(post)
+        return Response(serializer.data)
+    except:
+        return Response({"message": "Failed"})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
