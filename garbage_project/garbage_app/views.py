@@ -33,7 +33,8 @@ logging.basicConfig( level=logging.DEBUG, format='%(asctime)s - %(levelname)s - 
 # Create your views here.
 
 def index(request):
-    return render(request,"garbage_app/home.html")
+
+    return render(request,"garbage_app/home.html",{'post_list':Post.objects.all()})
 def base_page(request):
     return render(request,"garbage_app/base.html")
 
