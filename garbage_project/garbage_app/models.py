@@ -20,7 +20,7 @@ class Post(models.Model):
     address=models.CharField(max_length=200,blank=True,null=True)
 
     def __str__(self):
-        return self.author
+        return self.Description
 
     def publish(self):
         self.published_date = timezone.now()
