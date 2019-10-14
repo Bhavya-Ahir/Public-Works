@@ -44,7 +44,8 @@ urlpatterns = [
     path("upvotelist/",views.Vote_table_list.as_view(),name="UpvoteTable"),
     path("userslikedpost/<int:uid>/",views.liked_post,name="getuserslikedspost"),
     path("getuserspost/<int:uid>/",views.get_users_post,name="getuserspost"),
-    path("downvote/",views.downvote,name="downvote")
+    path("downvote/",views.downvote,name="downvote"),
+    path("filterpost/",views.filter_posts,name="filterpost"),
 
 ]
 
