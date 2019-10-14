@@ -68,3 +68,6 @@ class Garbage_User(models.Model):
 class Vote_table(models.Model):
     user_id=models.IntegerField()
     post_id=models.IntegerField()
+
+    class Meta:
+        unique_together = ('user_id', 'post_id',)

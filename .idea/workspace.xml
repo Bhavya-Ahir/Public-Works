@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b36a975-f1ce-4ff7-b1c4-8d051980cb98" name="Default Changelist" comment="">
+    <list default="true" id="0b36a975-f1ce-4ff7-b1c4-8d051980cb98" name="Default Changelist" comment="14 oct">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/garbage_project/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/garbage_project/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/garbage_project/garbage_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/garbage_project/garbage_app/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/garbage_project/garbage_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/garbage_project/garbage_project/urls.py" afterDir="false" />
     </list>
@@ -30,12 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="85" />
-    <option name="y" value="25" />
-    <option name="width" value="1750" />
-    <option name="height" value="980" />
-  </component>
+  <component name="ProjectId" id="1SC2XEIVB1ldrTlz6I1BxuYD4BU" />
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -94,7 +88,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4df30ee3-2679-45cc-abfc-de529890e641" name="Default Changelist" comment="" />
+      <changelist id="0b36a975-f1ce-4ff7-b1c4-8d051980cb98" name="Default Changelist" comment="" />
       <created>1569164751829</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -102,14 +96,63 @@
       <workItem from="1569164759885" duration="3285000" />
       <workItem from="1569305729222" duration="1433000" />
       <workItem from="1569564884432" duration="286000" />
+      <workItem from="1571053327411" duration="325000" />
+      <workItem from="1571053843384" duration="2488000" />
     </task>
+    <task id="LOCAL-00001" summary="Like feature added">
+      <created>1569610721995</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1569610721995</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Like feature added+APIS">
+      <created>1569621324894</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1569621324894</updated>
+    </task>
+    <task id="LOCAL-00003" summary="get users post+liked posts">
+      <created>1569622334649</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1569622334649</updated>
+    </task>
+    <task id="LOCAL-00004" summary="del likes">
+      <created>1569626114147</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1569626114147</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="trying from pycharm" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying from pycharm" />
+    <MESSAGE value="Like feature added" />
+    <MESSAGE value="Like feature added+APIS" />
+    <MESSAGE value="get users post+liked posts" />
+    <MESSAGE value="del likes" />
+    <MESSAGE value="14 oct" />
+    <option name="LAST_COMMIT_MESSAGE" value="14 oct" />
   </component>
 </project>

@@ -23,8 +23,9 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.http import JsonResponse    
 import logging
 from rest_framework.parsers import MultiPartParser, FormParser
+from math import sin, cos, sqrt, atan2
+from math import radians, sin, cos, acos
 logging.basicConfig( level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
-# from .logginginitializer import *
 
 
 
@@ -170,7 +171,7 @@ def upvote_view(request):
             return Response(dict)
         else:
 
-            return Response({"message":"Invalid Post"})
+            return Response({"message":"Already Liked"})
 
     except Exception as e :
         logging.fatal(e,exc_info=True)
@@ -197,23 +198,75 @@ def get_users_post(request, uid):
 
 
 
-# @api_view(["GET"])
-# def Vote_table_list(request):
-#     queryset=Vote_table.objects.all()
-#     serializer=Vote_tableSerializer(data=queryset)
+@api_view(["POST"])
+
+def downvote(request):
+
+    try:
+        uid=request.data["user_id"]
+        pid=request.data["post_id"]
+        post=Post.objects.get(id=pid)
+        logging.debug(post.vote_count)
+        post.vote_count-=1
+        logging.debug("check 1")
+        post.save()
+        logging.debug("check 2")
+        entry=Vote_table.objects.filter(user_id=uid).filter(post_id=pid)
+        logging.debug("check 3")
+
+        entry.delete()
+        return Response({"message":"successful","updated_vote_count":post.vote_count})
+    except:
+        return Response({"message":"Failed"})
+
 #
-#     if serializer.is_valid():
-#     # dict={}
-#     # dict["list"]=queryset
-#         return Response(serializer.data)
-#     return Response({"message":"Failed"})
+# {
+#     "user_id":1
+#     ,"post_id":5
+# }
+
+
+
+
+
+
+
+
+
+
+
+@api_view(["GET"])
+def liked_post(request,uid):
+    try:
+
+        entry=Vote_table.objects.filter(user_id=uid).values()
+
+        logging.debug(list(entry))
+        # serializer=Vote_tableSerializer(data=entry,many=True)
+        # if serializer.is_valid():
+        return Response(list(entry))
+
+
+    except:
+        logging.debug("Exception")
+        return Response({"message":"Failed"})
+
+
+@api_view(["GET"])
+def get_users_post(request,uid):
+    try:
+        users_post=Post.objects.filter(author=uid).values()
+        return Response(list(users_post))
+
+    except:
+        return Response({"message":"Failed"})
+
+
 
 class Vote_table_list(generics.ListCreateAPIView):
     # logging.debug(request.data)
     queryset=Vote_table.objects.all()
     serializer_class=Vote_tableSerializer
-
-
 
 
 
@@ -250,19 +303,33 @@ class PostListView(ListView):
         return Post.objects.all()
 
 
-# @api_view(['POST'])
-# def filter_posts(request):
-#     received_latitude=request.data["latitude"]
-#     received_longitude=request.data["longitude"]
-#     radius=request.data["radius"]
-#     all_posts=Post.objects.all()
+@api_view(['POST'])
+def filter_posts(request):
+    try:
+        # slat = radians(float(input("Starting latitude: ")))
+        # slon = radians(float(input("Ending longitude: ")))
+        # elat = radians(float(input("Starting latitude: ")))
+        # elon = radians(float(input("Ending longitude: ")))
+        #
+        # dist = 6371.01 * acos(sin(slat) * sin(elat) + cos(slat) * cos(elat) * cos(slon - elon))
 
-#     for post in all_posts:
+        slat=radians(request.data["latitude"])
+        slon=radians(request.data["longitude"])
+        radius=request.data["radius"]
+        all_posts=Post.objects.all()
+        to_send=[]
+        for post in all_posts:
+            elat=radians(post.latitude)
+            elon=radians(post.longitude)
+            logging.debug(6371.01 * acos(sin(slat) * sin(elat) + cos(slat) * cos(elat) * cos(slon - elon)))
+            logging.debug(radius)
+            if  6371.01 * acos(sin(slat) * sin(elat) + cos(slat) * cos(elat) * cos(slon - elon))<=radius:
 
-#         if 
-
-
-
+                to_send.append(post.values())
+        logging.debug(list(to_send))
+        return Response(to_send)
+    except:
+        return Response(to_send)
 
 
 
@@ -335,4 +402,9 @@ def comment_remove(request, pk):
     comment.delete()
     return redirect('post_detail', pk=post_pk)
 
-
+# 19.1642021,72.863352
+# {
+#     "latitude":19.1642021,
+#     "longitude":72.863352,
+#     "radius":10
+# }
