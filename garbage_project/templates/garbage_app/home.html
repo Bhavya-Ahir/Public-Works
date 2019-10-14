@@ -72,8 +72,9 @@
                         console.log(latitude);
                         // The marker, positioned at Uluru
                         for (var i = 0; i < latitude.length; i++) {
+                            
                             var marker = new google.maps.Marker({
-                                position: {lat: longitude[i], lng: longitude[i]},
+                                position: {lat: latitude[i], lng: longitude[i]},
                                 map: map
                             });
                         }
