@@ -20,7 +20,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">{{ post.title }}</h4>
                                 <div class="card-text"><b>Description</b>: {{ post.Description }}</div>
-                                <div class="card-text"><b>Area</b></div>
+                                <div class="card-text"><b>Area: {{post.address}}</b></div>
                                 <div class="card-text"><b>Upvotes</b>: {{ post.vote_count }}</div>
                                 <div class="card-text"><b>Current Status</b>: {{ post.status }}</div>
                                 <div class="card-text text-muted">Date: {{ post.published_date }}</div>
@@ -72,7 +72,7 @@
                         console.log(latitude);
                         // The marker, positioned at Uluru
                         for (var i = 0; i < latitude.length; i++) {
-                            
+
                             var marker = new google.maps.Marker({
                                 position: {lat: latitude[i], lng: longitude[i]},
                                 map: map
