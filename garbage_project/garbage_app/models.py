@@ -17,10 +17,10 @@ class Post(models.Model):
     published_date = models.DateTimeField(blank=True, null=True)
     status=models.CharField(default="Waiting for Acknowledgement",max_length=10)
     vote_count=models.IntegerField(default=0)
-
+    address=models.CharField(max_length=200,blank=True,null=True)
 
     def __str__(self):
-        return self.Description
+        return self.author
 
     def publish(self):
         self.published_date = timezone.now()
