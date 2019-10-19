@@ -1,0 +1,27 @@
+{% extends 'garbage_app/base.html' %}
+
+{% block body_block %}
+
+
+        {#            <div>Name:{{ user.first_name }}</div>#}
+        <div class="col-md-8">
+            <div class="card-body">
+                <h4 class="card-title">{{ garbage_user.first_name }}{{ garbage_user.last_name }}</h4>
+                <div class="card-text"><b>Email id</b>: {{ garbage_user.email_id }}</div>
+                <div class="card-text"><b>Phone Number</b>: {{ garbage_user.phone_number }}</div>
+
+
+            </div>
+        </div>
+        </div>
+
+    <div >
+    {% block user_list_block %}
+
+
+    {% endblock %}
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'garbage_app/base.html' %}
+
+{% block body_block %}
+
+    {% for user in users_list %}
+        {#            <div>Name:{{ user.first_name }}</div>#}
+        <div class="col-md-8">
+            <div class="card-body">
+                <h4 class="card-title">{{ user.first_name }}{{ user.last_name }}</h4>
+                <div class="card-text"><b>Email id</b>: {{ user.email_id }}</div>
+                <div class="card-text"><b>Phone Number</b>: {{ user.phone_number }}</div>
+                <a class="btn btn-success" href="{% url 'user_detail' pk=user.id %}">View More</a>
+                {{ user.id }}
+            </div>
+        </div>
+        </div>
+    {% endfor %}
+{% endblock %}

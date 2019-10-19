@@ -34,6 +34,7 @@ urlpatterns = [
 
     path("postAPI/",views.PostList.as_view(),name="post_listAPI"),
     path("post/upload/",views.send_post,name="post_listAPIModified"),
+    path("post/delete/<int:id>/",views.delete_post,name="delete post"),
 
     path("Garbage_UserAPI/",views.Garbage_UserList.as_view(),name="Garbage_UserListAPI"),
     path("postAPI/<int:pk>/",views.PostDetail.as_view(),name="post_details"),
