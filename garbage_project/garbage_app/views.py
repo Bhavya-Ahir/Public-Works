@@ -25,6 +25,7 @@ import logging
 from rest_framework.parsers import MultiPartParser, FormParser
 from math import sin, cos, sqrt, atan2
 from math import radians, sin, cos, acos
+import json
 from django.core import serializers
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -285,13 +286,13 @@ class PostListView(ListView):
 
 @api_view(['POST'])
 def filter_posts(request):
+    to_send = []
     try:
-
-        slat = radians(request.data["latitude"])
-        slon = radians(request.data["longitude"])
-        radius = request.data["radius"]
+        json_object=json.loads(request.body)[0]
+        slat = radians(json_object.data["latitude"])
+        slon = radians(json_object.data["longitude"])
+        radius = json_object.data["radius"]
         all_posts = Post.objects.all()
-        to_send = []
         i = 0
         for post in all_posts:
 
@@ -310,7 +311,7 @@ def filter_posts(request):
         # logging.debug(list(to_send))
         return Response(to_send)
     except:
-        return Response({"message": "No post found"})
+        return Response(to_send)
 
 
 class PostDetailView(DetailView):
