@@ -28,33 +28,28 @@
                                 <form id="myForm" action="/updateStatus/" method="POST" onsubmit="myfunc()">
                                     {% csrf_token %}
                                     <input type="hidden" id="slider_input" name="post_id" value={{ post.id }}>
-                                    <input type="radio" id="ack" name="status" value="Acknowledged" checked>Acknowledge
-                                    <input type="radio" id="inprog" name="status" value="In-Progress">In-progress
-                                    <input type="radio" id="cmplt" name="status" value="Completed">Completed
+                                    <input type="radio" id="waiting{{ post.id }}" name="status" value="Waiting for Acknowledgement" checked>Waiting for Acknowledgement
+                                    <input type="radio" id="ack{{ post.id }}" name="status" value="Acknowledged" checked>Acknowledged
+                                    <br>
+                                    <input type="radio" id="inprog{{ post.id }}" name="status" value="In-Progress">In-progress
+                                    <input type="radio" id="cmplt{{ post.id }}" name="status" value="Completed">Completed
                                     <input type="submit" value="Update">
                                 </form>
                                 <script>
-
                                     function check() {
-
-                                        console.log("Inside check")
-                                        console.log("{{ post.status }}")
-                                        if ("{{ post.status }}" == "Acknowledged"
-                                        ) {
-                                            document.getElementById("ack").checked = true;
-
+                                        console.log("Inside check");
+                                        console.log("{{ post.status }}");
+                                        if ("{{ post.status }}" === "Waiting for Acknowledgement") {
+                                            document.getElementById("waiting{{ post.id }}").checked = true;
                                         }
-
-                                        if ("{{ post.status }}" == "In-Progress"
-                                        ) {
-                                            document.getElementById("inprog").checked = true;
-
+                                        else if ("{{ post.status }}" === "Acknowledged") {
+                                            document.getElementById("ack{{ post.id }}").checked = true;
                                         }
-
-                                        if ("{{ post.status }}" == "Completed"
-                                        ) {
-                                            document.getElementById("cmplt").checked = true;
-
+                                        else if ("{{ post.status }}"=== "In-Progress") {
+                                            document.getElementById("inprog{{ post.id }}").checked = true;
+                                        }
+                                        else if ("{{ post.status }}" === "Completed") {
+                                            document.getElementById("cmplt{{ post.id }}").checked = true;
                                         }
                                     }
 
@@ -63,7 +58,6 @@
                                         let form = $("#myForm")
                                         form.submit()
                                     }
-
                                     check();
                                 </script>
                                 {#                                {% if post.status == 'Waiting for Acknowledgement' %}#}
@@ -82,7 +76,7 @@
 
 
                                 <br>
-                                <a href="#" class="btn btn-primary">View More</a>
+
 
                             </div>
                         </div>
