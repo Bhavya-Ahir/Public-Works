@@ -24,3 +24,6 @@ class CommentForm(forms.ModelForm):
             'author': forms.TextInput(attrs={'class': 'textinputclass'}),
             'text': forms.Textarea(attrs={'class': 'editable medium-editor-textarea'}),
         }
+
+class StatusForm(forms.Form):
+    fields=["status","post_id"]

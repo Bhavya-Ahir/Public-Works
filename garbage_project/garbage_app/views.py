@@ -26,6 +26,7 @@ from rest_framework.parsers import MultiPartParser, FormParser
 from math import sin, cos, sqrt, atan2
 from math import radians, sin, cos, acos
 import json
+from .forms import StatusForm
 from django.core import serializers
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -171,9 +172,14 @@ def upvote_view(request):
         logging.debug("Data Received")
         logging.debug(request.data["post_id"])
         received_post_id = request.data["post_id"]
+        received_user_id=request.data["user_id"]
         logging.debug(received_post_id)
         post_obj = Post.objects.get(id=received_post_id)
         logging.debug(post_obj.id)
+
+        # if len(Vote_table.objects.filter(user_id=received_user_id).filter(post_id=received_post_id))!=0:
+        #     return Response({"message":"Already liked"})
+
         post_obj.vote_count += 1
         post_obj.save()
         if serializer.is_valid():
@@ -263,18 +269,18 @@ class PostDetail(generics.RetrieveDestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
-
-class CreateVote(APIView):
-    serializer_class = VoteSerializer
-
-    def post(self, request, pk):
-        voted_by = request.data.get("voted_by")
-        data = {"post": pk, "voted_by": voted_by}
-        serializer = VoteSerializer(data=data)
-        if serializer.is_valid():
-            vote = serializer.save()
-        else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+#
+# class CreateVote(APIView):
+#     serializer_class = VoteSerializer
+#
+#     def post(self, request, pk):
+#         voted_by = request.data.get("voted_by")
+#         data = {"post": pk, "voted_by": voted_by}
+#         serializer = VoteSerializer(data=data)
+#         if serializer.is_valid():
+#             vote = serializer.save()
+#         else:
+#             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class PostListView(ListView):
@@ -396,13 +402,18 @@ def comment_remove(request, pk):
 @api_view(["POST"])
 def update_status(request):
     try:
-        uid = request.data["user_id"]
+
+        # form=StatusForm(request.POST)
+        # status=request.data['status']
+        # uid = request.data["user_id"]
         pid = request.data["post_id"]
+
         status = request.data["status"]
         post = Post.objects.get(id=pid)
         post.status = status
         post.save()
         serializer = PostSerializer(post)
-        return Response(serializer.data)
-    except:
+        return render(request,"garbage_app/post_list.html",{"post_list":Post.objects.all()})
+    except Exception as e:
+        logging.debug(e)
         return Response({"message": "Failed"})

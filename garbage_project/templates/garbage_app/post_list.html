@@ -14,20 +14,63 @@
                                      style="padding: 10px"/>
                             {% endif %}
                         </div>
+
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h4 class="card-title">{{ post.title }}</h4>
+
                                 <div class="card-text"><b>Description</b>: {{ post.Description }}</div>
                                 <div class="card-text"><b>Area</b>: {{ post.address }}</div>
                                 <div class="card-text"><b>Upvotes</b>: {{ post.vote_count }}</div>
                                 <div class="card-text"><b>Current Status</b>: {{ post.status }}</div>
                                 <div class="card-text text-muted">Date: {{ post.published_date }}</div>
 
+                                <form id="myForm" action="/updateStatus/" method="POST" onsubmit="myfunc()">
+                                    {% csrf_token %}
+                                    <input type="hidden" id="slider_input" name="post_id" value={{ post.id }}>
+                                    <input type="radio" id="ack" name="status" value="Acknowledged" checked>Acknowledge
+                                    <input type="radio" id="inprog" name="status" value="In-Progress">In-progress
+                                    <input type="radio" id="cmplt" name="status" value="Completed">Completed
+                                    <input type="submit" value="Update">
+                                </form>
+                                <script>
+
+                                    function check() {
+
+                                        console.log("Inside check")
+                                        console.log("{{ post.status }}")
+                                        if ("{{ post.status }}" == "Acknowledged"
+                                        ) {
+                                            document.getElementById("ack").checked = true;
+
+                                        }
+
+                                        if ("{{ post.status }}" == "In-Progress"
+                                        ) {
+                                            document.getElementById("inprog").checked = true;
+
+                                        }
+
+                                        if ("{{ post.status }}" == "Completed"
+                                        ) {
+                                            document.getElementById("cmplt").checked = true;
+
+                                        }
+                                    }
+
+                                    function myfunc(event) {
+                                        event.preventDefault()
+                                        let form = $("#myForm")
+                                        form.submit()
+                                    }
+
+                                    check();
+                                </script>
                                 {#                                {% if post.status == 'Waiting for Acknowledgement' %}#}
-                                <label class="radio-inline"><input type="radio" name="optradio"
-                                                                   checked>Acknowledged</label>
-                                <label class="radio-inline"><input type="radio" name="optradio">In-Progress</label>
-                                <label class="radio-inline"><input type="radio" name="optradio">Completed</label>
+                                {#                                <label class="radio-inline"><input type="radio" name="optradio"#}
+                                {#                                                                   checked> <button onclick="sendAcknowledge()">Acknowledge</button></label>#}
+                                {#                                <label class="radio-inline"><input type="radio" name="optradio"><button onclick="sendInprogress()">In-progress</button></label>#}
+                                {#                                <label class="radio-inline"><input type="radio" name="optradio"><button onclick="sendCompleted()">Completed</button></label>#}
                                 {#                                {% elif post.status == 'Acknowledged' %}#}
                                 {#                                    <label class="radio-inline"><input type="radio" name="optradio">In-Progress</label>#}
                                 {#                                    <label class="radio-inline"><input type="radio" name="optradio">Completed</label>#}
@@ -37,7 +80,6 @@
                                 {##}
                                 {#                                {% endif %}#}
 
-                                <a href="#" class="btn btn-success">Update</a>
 
                                 <br>
                                 <a href="#" class="btn btn-primary">View More</a>
