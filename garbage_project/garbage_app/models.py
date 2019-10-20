@@ -18,7 +18,6 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     Description=models.CharField(max_length=200)
     author=models.ForeignKey(Garbage_User,on_delete=models.CASCADE)
-
     latitude=models.DecimalField(max_digits=10,decimal_places=8,null=True)
     longitude=models.DecimalField(max_digits=11,decimal_places=8,null=True)
     created_date = models.DateTimeField(default=timezone.now)

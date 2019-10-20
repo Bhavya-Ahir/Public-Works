@@ -180,9 +180,10 @@ def upvote_view(request):
         # if len(Vote_table.objects.filter(user_id=received_user_id).filter(post_id=received_post_id))!=0:
         #     return Response({"message":"Already liked"})
 
-        post_obj.vote_count += 1
-        post_obj.save()
+
         if serializer.is_valid():
+            post_obj.vote_count += 1
+            post_obj.save()
             serializer.save()
             dict["error"] = False
             dict["message"] = "Upvote Successful"
