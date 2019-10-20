@@ -269,18 +269,18 @@ class PostDetail(generics.RetrieveDestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
-#
-# class CreateVote(APIView):
-#     serializer_class = VoteSerializer
-#
-#     def post(self, request, pk):
-#         voted_by = request.data.get("voted_by")
-#         data = {"post": pk, "voted_by": voted_by}
-#         serializer = VoteSerializer(data=data)
-#         if serializer.is_valid():
-#             vote = serializer.save()
-#         else:
-#             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class CreateVote(APIView):
+    serializer_class = VoteSerializer
+
+    def post(self, request, pk):
+        voted_by = request.data.get("voted_by")
+        data = {"post": pk, "voted_by": voted_by}
+        serializer = VoteSerializer(data=data)
+        if serializer.is_valid():
+            vote = serializer.save()
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class PostListView(ListView):

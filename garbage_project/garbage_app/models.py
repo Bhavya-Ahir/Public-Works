@@ -4,13 +4,21 @@ from django.utils import timezone
 from django.urls import reverse
 # Create your models here.
 
+class Garbage_User(models.Model):
+    first_name=models.CharField(max_length=50)
+    last_name=models.CharField(max_length=50)
+    email_id=models.EmailField()
+    password=models.CharField(max_length=100)
+    phone_number=models.IntegerField()
+
 
 class Post(models.Model):
 
     image=models.FileField(null=True,blank=True)
     title = models.CharField(max_length=200)
     Description=models.CharField(max_length=200)
-    author=models.ForeignKey(User,on_delete=models.CASCADE)
+    author=models.ForeignKey(Garbage_User,on_delete=models.CASCADE)
+
     latitude=models.DecimalField(max_digits=10,decimal_places=8,null=True)
     longitude=models.DecimalField(max_digits=11,decimal_places=8,null=True)
     created_date = models.DateTimeField(default=timezone.now)
@@ -23,6 +31,7 @@ class Post(models.Model):
         return self.Description
 
     def publish(self):
+
         self.published_date = timezone.now()
         self.save()
 
@@ -58,12 +67,7 @@ class Comment(models.Model):
         return self.text
 
 
-class Garbage_User(models.Model):
-    first_name=models.CharField(max_length=50)
-    last_name=models.CharField(max_length=50)
-    email_id=models.EmailField()
-    password=models.CharField(max_length=100)
-    phone_number=models.IntegerField()
+
 
 class Vote_table(models.Model):
     user_id=models.IntegerField()

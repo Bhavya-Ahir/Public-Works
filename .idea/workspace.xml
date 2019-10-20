@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0b36a975-f1ce-4ff7-b1c4-8d051980cb98" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/garbage_project/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/garbage_project/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/garbage_project/garbage_app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/garbage_project/garbage_app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/garbage_project/garbage_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/garbage_project/garbage_app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/garbage_project/templates/garbage_app/post_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/garbage_project/templates/garbage_app/post_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/garbage_project/garbage_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/garbage_project/garbage_app/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571073707432</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="20 oct">
+      <created>1571587792675</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1571587792675</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +196,7 @@
     <MESSAGE value="14 oct" />
     <MESSAGE value=" 14 final" />
     <MESSAGE value="14 final 2.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="14 final 2.0" />
+    <MESSAGE value="20 oct" />
+    <option name="LAST_COMMIT_MESSAGE" value="20 oct" />
   </component>
 </project>
