@@ -286,12 +286,14 @@ class PostListView(ListView):
 
 @api_view(['POST'])
 def filter_posts(request):
-    to_send = []
+
     try:
+        to_send = []
         json_object=json.loads(request.body)[0]
-        slat = radians(json_object.data["latitude"])
-        slon = radians(json_object.data["longitude"])
-        radius = json_object.data["radius"]
+        logging.debug(json_object)
+        slat = radians(json_object["latitude"])
+        slon = radians(json_object["longitude"])
+        radius = json_object["radius"]
         all_posts = Post.objects.all()
         i = 0
         for post in all_posts:
@@ -310,7 +312,8 @@ def filter_posts(request):
 
         # logging.debug(list(to_send))
         return Response(to_send)
-    except:
+    except Exception as e:
+        logging.debug(e)
         return Response(to_send)
 
 
