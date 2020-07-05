@@ -4,7 +4,7 @@ In this project, the proposed approach is to provide better transparency between
 ## WEBSITE UI:
 ### LOGIN:
 #### Admin has to login to see all the issues of a particular area.
-![Image](https://github.com/Bhavya-Ahir/sad_project/blob/master/image12.jpg)
+
 ### ADMIN PROFILE:
 #### Admin has to login to see all the issues of a particular area.
 ![Image](https://github.com/Bhavya-Ahir/sad_project/blob/master/image13.png)
