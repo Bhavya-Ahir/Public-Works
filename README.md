@@ -1,10 +1,10 @@
 # sad_project
 In this project, the proposed approach is to provide better transparency between the authorities and the localites and to help the government maintain cleanliness around the city. A user can report any issue he encounters. They just have to click a photo of the same and send it through the app. The government authorities can see the issues on their website according to the criticality of the issue. They can update the status of the issue from acknowledged/ in-progress/ completed. The users can upvote other’s post to increase the criticality of the issue. Government officials get to see all the garbage prone areas and then take action accordingly
-
+![Image 12](https://github.com/Bhavya-Ahir/sad_project/blob/master/image12.jpg)
 <h2>WEBSITE UI:<h2>
 <h2>LOGIN:<h2>
 <h1>Admin has to login to see all the issues of a particular area.<h1>
-![Image12](https://github.com/Bhavya-Ahir/sad_project/blob/master/image12.png)
+![Image 12](https://github.com/Bhavya-Ahir/sad_project/blob/master/image12.png)
 ADMIN PROFILE:
 Admins profile from which he has logged in can be seen
 ![Image13](https://github.com/Bhavya-Ahir/sad_project/blob/master/image13.png)
